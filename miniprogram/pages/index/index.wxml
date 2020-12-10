@@ -1,0 +1,63 @@
+<!-- miniprogram/pages/index/index.wxml -->
+<wux-toptips id="wux-toptips" />
+<view class="container">
+  <view class="status">
+    <text>{{status_text}}</text>
+  </view>
+  <view class="content">
+    <scroll-view scroll-y="true" style="height:100%;width:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+      <block>
+        <navigator url="{{item.url}}" bindtap="goGroupDetail" class="card" wx:for-items="{{list}}" wx:key="group_id" data-id="{{item.group_id}}" data-name="{{item.group_name}}" data-permission="{{item.group_permission}}">
+          <view style="top:50rpx; left:50rpx; font-size:14pt; color:#4f58a8;">
+            {{item.group_name}}
+          </view>
+          <view style="top:105rpx; left:50rpx; font-size:11pt; color:#888888;">
+            创建者 {{item.group_creator_name}}
+          </view>
+          <view hidden="{{item.cur_checked}}" style="position:absolute;right:30rpx;font-size:11pt;color:#888888;">
+            <wux-timeago to="{{item.last_check_time}}" lang="zh_CN" refreshable />
+          </view>
+          <view hidden="{{!item.cur_checked}}" style="position:absolute;right:30rpx;font-size:11pt;color:#888888;">
+            <text>已签到</text>
+          </view>
+          <view style="top:105rpx; left:50rpx; font-size:11pt; color:#888888;">
+            邀请码 {{item.group_id}}
+          </view>
+        </navigator>
+      </block>
+      <block>
+        <view class="card" wx:for-items="{{skeletons}}" wx:key="*this" hidden="{{isloaded}}">
+          <wux-skeleton active>
+            <wux-skeleton-paragraph rows="3" />
+          </wux-skeleton>
+        </view>
+      </block>
+      <view style="width:10rpx;height:300rpx;"></view>
+    </scroll-view>
+  </view>
+
+  <view hidden="{{joined}}" style="position:fixed; top:160rpx;font-size:11pt; color:#888888;">
+    尚未加入任何点名小组
+  </view>
+</view>
+
+<view class="mainplus" animation="{{animationData}}" style="height:{{btnHeight}}; width:{{btnWidth}};"></view>
+<image class="{{plusStatus}}" animation="{{plusanimationData}}" style="transform:rotate({{rotateAngle}})" src="/pages/images/u3.png" mode="cover"></image>
+<view class="mainButton" bindtap="{{mainPlusTap}}"></view>
+
+<view class="features" hidden="{{isFeatureHidden}}">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <navigator class="flex-item demo-text-1" bindtap="shrink" url="/pages/create/index">
+      <i-icon type="integral" size="35" color="#ffffff" style="margin-top:100rpx;" />
+      <view style="color:#ffffff">创建</view>
+    </navigator>
+    <navigator class="flex-item demo-text-2" bindtap="shrink" url="/pages/join/index">
+      <i-icon type="add" size="35" color="#ffffff" style="margin-top:100rpx;" />
+      <view style="color:#ffffff">加入</view>
+    </navigator>
+    <navigator class="flex-item demo-text-3" bindtap="shrink" bindlongpress="moreLongpress" url="/pages/index/more">
+      <i-icon type="more" size="35" color="#ffffff" style="margin-top:100rpx;" />
+      <view style="color:#ffffff">更多</view>
+    </navigator>
+  </view>
+</view>

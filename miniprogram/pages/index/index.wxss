@@ -1,0 +1,127 @@
+/* miniprogram/pages/index/index.wxss */
+.wux-toptips {
+  position: fixed;
+  top: 200rpx;
+  left: 0;
+  right: 0;
+  z-index: 5000
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.content {
+  background-color: #e8eff5;
+  padding-top:10rpx;
+  position:fixed;
+  width:100%;
+  height:100vh;
+  top:145rpx;
+}
+
+.card {
+  display:block;
+  padding:20rpx;
+  padding-left:40rpx;
+  margin-top:20rpx;
+  background-color: #ffffff;
+  width:100%;
+}
+
+.mainplus {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed; 
+  justify-content: space-between;
+  margin-left:275rpx;
+  bottom: 0px; 
+  background-color: #4f58a8;
+  width:200rpx;
+  height:125rpx;
+  box-shadow: 3rpx 3rpx 3rpx;
+}
+
+.mainpluspressed {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed; 
+  justify-content: space-between;
+  bottom: 0px; 
+  background-color: #636cb6;
+  width:200rpx;
+  height:125rpx;
+  animation: plusScale 300ms linear;
+}
+
+.plus {
+  position: fixed;
+  margin-left:357.5rpx;
+  bottom:40rpx;
+  width:45rpx;
+  height:45rpx;
+}
+
+.pressed {
+  position: fixed;
+  bottom:40rpx;
+  width:45rpx;
+  height:45rpx;
+  animation: plusRotate 300ms linear
+}
+
+.features {
+  position: fixed;
+  bottom:130rpx;
+  width:100vw;
+  height:150rpx;
+  background-color:rgba(255, 255, 255, 0);
+}
+
+.mainButton {
+  margin-left:275rpx;
+  position: fixed;
+  bottom:0rpx;
+  width:200rpx;
+  height:125rpx;
+  background-color:rgba(255, 255, 255, 0);
+}
+
+.flex-wrp{
+  display:flex;
+  margin-left:5rpx;
+  width:100%;
+  height:200rpx;
+}
+
+.flex-item{
+  text-align:center;
+  margin:30rpx;
+  width: 200rpx;
+  height: 150rpx;
+  font-size: 26rpx;
+}
+
+@keyframes plusRotate{
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(45deg);}
+}
+
+@keyframes plusScale{
+  0% {transform: scale(1,1);}
+  100% {transform: scale(4,3);}
+}

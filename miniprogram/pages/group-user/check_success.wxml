@@ -1,0 +1,22 @@
+<!--miniprogram/pages/group-user/check_success.wxml-->
+<view class="content">
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+      <icon type="success" size="93"></icon>
+    </view>
+    <view class="weui-msg__text-area">
+      <view class="weui-msg__title">签到成功</view>
+      <view class="weui-msg__desc">签完到了就放下手机吧，好好学习天天向上</view>
+    </view>
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+        <button class="weui-btn" bindtap="enter" style="background-color:#454d93;" type="primary">确定</button>
+      </view>
+    </view>
+    <view class="weui-msg__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__text">Copyright © 1998-2019 keanuo</view>
+      </view>
+    </view>
+  </view>
+</view>

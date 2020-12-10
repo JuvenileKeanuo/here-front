@@ -1,0 +1,10 @@
+/* miniprogram/pages/firstboot/welcome.wxss */
+.textContent {
+  position: fixed;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  top: 520rpx;
+  color: #ffffff;
+  font-size:30rpx;
+  font-weight: light;
+}

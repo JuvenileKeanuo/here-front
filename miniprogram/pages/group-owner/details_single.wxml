@@ -1,0 +1,30 @@
+<!--miniprogram/pages/group-owner/details_single.wxml-->
+<view class="container">
+  <view class="status">
+    <text>签到详情</text>
+  </view>
+  <view class="content">
+    <scroll-view scroll-y="true" style="height:100%;width:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+      <view class="weui-cells__title" hidden="{{unchecked_exist}}">未到</view>
+      <view class="weui-cells weui-cells_after-title" hidden="{{unchecked_exist}}">
+        <view class="weui-cell" wx:for-items="{{check_data._user_unchecked}}" wx:key="_studentid">
+          <view class="weui-cell__bd">{{item._name}}</view>
+          <view class="weui-cell__ft">{{item._studentid}}</view>
+        </view>
+      </view>
+      <view class="weui-cells__title" hidden="{{checked_exist}}">已到</view>
+      <view class="weui-cells weui-cells_after-title" hidden="{{checked_exist}}">
+        <view class="weui-cell" wx:for-items="{{check_data._user_checked}}" wx:key="_studentid">
+          <view class="weui-cell__bd">{{item._name}}</view>
+          <view class="weui-cell__ft">{{item._studentid}}</view>
+        </view>
+      </view>
+      <view style="width:10rpx;height:240rpx;">
+      </view>
+    </scroll-view>
+  </view>
+  <navigator>
+    <wux-fab-button action="{{button_icon}}" position="{{ types[typeIndex] }}" theme="calm" direction="vertical" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:change="onChange"
+      bind:click="onClick" bind:contact="onContact" bind:getuserinfo="onGotUserInfo" />
+  </navigator>
+</view>

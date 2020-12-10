@@ -1,0 +1,22 @@
+<!--miniprogram/pages/group-owner/details_total.wxml-->
+<wux-toptips id="wux-toptips"/>
+<view class="container">
+  <view class="status">
+    <text>签到统计</text>
+  </view>
+  <view class="content">
+    <scroll-view scroll-y="true" style="height:100%;width:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+      <view class="weui-cells__title">统计</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell" wx:for-items="{{details_total}}" wx:key="_studentid">
+          <view class="weui-cell__bd">{{item._name}} {{item._studentid}}</view>
+          <view class="weui-cell__ft">已到{{item._num_checked}}次 未到{{item._num_unchecked}}次</view>
+        </view>
+      </view>
+      <view style="width:10rpx;height:240rpx;">
+      </view>
+    </scroll-view>
+  </view>
+  <navigator><wux-fab-button action="{{button_icon}}" actionRotate="false" position="{{ types[typeIndex] }}" theme="calm" direction="vertical" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" bind:contact="onContact" bind:getuserinfo="onGotUserInfo" /></navigator>
+  
+</view>

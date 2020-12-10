@@ -1,0 +1,29 @@
+<!--miniprogram/pages/group-owner/new_check.wxml-->
+<wux-toptips id="wux-toptips"/>
+<view class="container">
+  <view class="status">
+    <text>发起点名</text>
+  </view>
+  <view class="content">
+    <view class="weui-cells__title">点名设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">倒计时</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindCountdownChange" value="{{countdownIndex}}" range="{{countdowns}}">
+            <view class="weui-select weui-select_in-select-after">{{countdowns[countdownIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">开启位置检测</view>
+        <view class="weui-cell__ft">
+          <switch bindtap="switchtapped" checked="{{gpsCheck}}" disabled="{{!location.got}}" bindchange="gpsswitchChange"/>
+        </view>
+      </view>
+    </view>
+    <button class="weui-btn" bindtap="enterTap" url="/pages/index/index" style="background-color:#454d93;margin:20rpx;" type="primary">确定</button>
+  </view>
+</view>

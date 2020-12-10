@@ -1,0 +1,19 @@
+<!--miniprogram/pages/group-owner/user_manage.wxml-->
+<view class="container">
+  <view class="status">
+    <text>成员管理</text>
+  </view>
+  <view class="content">
+    <scroll-view scroll-y="true" style="height:100%;width:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+      <view class="weui-cells__title">点击以移除成员</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view hover-class="navigator-hover" url="" bindtap="removeUser" wx:for-items="{{user_data}}" wx:key="_studentid" data-id="{{item._openid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{item._name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">
+            {{item._studentid}}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

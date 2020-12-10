@@ -1,0 +1,61 @@
+<!-- miniprogram/pages/group-owner/index.wxml -->
+<swiper style="height:98vh;background-color:#4f58a8;" bindchange="swipeChange" current="{{curPage}}" indicator-dots="true" indicator-color="#7c84c7" indicator-active-color="#ffffff">
+  <block>
+    <swiper-item>
+      <view style="height:100vh;width:100vw;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+        <view style="position:fixed;top:20rpx;color:#ffffff;font-size:45rpx;font-weight:bold;">
+          使用「我到」,快速签到
+        </view>
+        <image style="position:fixed;top:150rpx;width:430rpx;height:308rpx;" src="/pages/images/wel1.png" mode="cover"></image>
+        <view class="textContent">
+          <text>
+            该小程序的账号与您的微信号绑定，你不需要注册，只需要提供你的姓名和学号来帮助老师来确认你的身份。\n\n如果您是老师的话，学号可以任意填写。\n 
+            在主界面点击+号后点击创建，输入小组名称和小组密码后，将得到的邀请码和小组密码告诉别人，即可以让其快速加入小组。
+          </text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item>
+      <view style="height:100vh;width:100vw;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+        <view style="position:fixed;top:20rpx;color:#ffffff;font-size:45rpx;font-weight:bold;">
+          快速创建、加入小组
+        </view>
+        <image style="position:fixed;top:150rpx;width:430rpx;height:308rpx;" src="/pages/images/wel2.png" mode="cover"></image>
+        <view class="textContent">
+          <text>
+            点击主界面的＋号后点击加入，输入小组邀请码和密码即可加入小组。\n\n加入小组后，每次点名期间只要打开小程序就可以自动在已加入的小组执行签到操作。\n
+            签到操作需要确认你当前的位置，开启小程序前记得打开手机的定位功能，并在稍后的弹框中给予小程序定位权限。
+          </text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item>
+      <view style="height:100vh;width:100vw;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+        <view style="position:fixed;top:20rpx;color:#ffffff;font-size:45rpx;font-weight:bold;">
+          查看统计，快速导出
+        </view>
+        <image style="position:fixed;top:150rpx;width:430rpx;height:308rpx;" src="/pages/images/wel3.png" mode="cover"></image>
+        <view class="textContent">
+          <text>
+            小组的创建者（老师）可以随时查看每次点名的情况、出勤率，可以查看签到的总统计并导出为电子表格。\n
+            详细记录每位同学的出勤情况，方便老师统计出勤分数。\n
+            每次点名可以设置倒计时，指定签到位置，在节省点名时间的同时有效防止替答到。
+          </text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view style="height:100vh;width:100vh;background-color:#4f58a8;position:fixed;"></view>
+<view style="bottom:100rpx;position:fixed;width:100vw;height:1px;background-color:#7c84c7;"></view>
+<view hover-class="navigator-hover" bindtap="goregister" hidden="{{leftHidden}}" style="bottom:2vh;left:50rpx;position:fixed;color:#ffffff;">
+  <view style="margin-bottom:0.5vh;">跳过</view>
+</view>
+<view hover-class="navigator-hover" open-type="" bindtap="nextPage" style="bottom:2vh;right:50rpx;position:fixed;color:#ffffff;">
+  <image hidden="{{rightHidden}}" style="width:51rpx;height:30rpx;" src="/pages/images/u0.png"></image>
+  <view hidden="{{!rightHidden}}" style="margin-bottom:0.5vh;">进入</view>
+</view>

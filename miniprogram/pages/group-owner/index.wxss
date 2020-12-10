@@ -1,0 +1,50 @@
+/* miniprogram/pages/group-owner/index.wxss */
+
+.mainplus {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute; 
+  justify-content: space-between;
+  bottom: 0px; 
+  background-color: #4f58a8;
+  width:100%;
+  height:125rpx;
+  box-shadow: 3rpx 3rpx 3rpx;
+}
+
+.plus {
+  position:absolute;
+  width:45rpx;
+  height:33.75rpx;
+  top:30rpx;
+  left:45%;
+}
+
+.buttontext {
+  position:absolute;
+  color:#ffffff;
+  font-size:25rpx;
+  top:27rpx;
+  left:44%;
+}
+
+.mainButton {
+  text-align:center;
+  position: fixed;
+  bottom:0rpx;
+  left:0rpx;
+  width:50%;
+  height:125rpx;
+  background-color:#000000;
+}
+
+.mainButton1 {
+  text-align:center;
+  position: fixed;
+  bottom:0rpx;
+  right:0rpx;
+  width:50%;
+  height:125rpx;
+  background-color:#000000;
+}

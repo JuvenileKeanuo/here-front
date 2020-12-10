@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/group-user/index",
+    "pages/group-owner/index",
+    "pages/create/index",
+    "pages/join/index",
+    "pages/testpage/index",
+    "pages/reregister/index",
+    "pages/group-owner/new_check",
+    "pages/group-user/check_success",
+    "pages/firstboot/index",
+    "pages/group-owner/details_single",
+    "pages/group-owner/details_total",
+    "pages/index/more",
+    "pages/apitest/index",
+    "pages/firstboot/welcome",
+    "pages/group-owner/settings",
+    "pages/group-owner/user_manage",
+    "pages/group-owner/info_edit",
+    "pages/index/edit_name_id"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4f58a8",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于签到位置校验"
+    }
+  },
+  "usingComponents": {
+    "i-icon": "../../dist/icon/index",
+    "wux-fab-button": "../../dist/fab-button/index",
+    "wux-skeleton": "../../dist/skeleton/index",
+    "wux-skeleton-paragraph": "../../dist/skeleton-paragraph/index",
+    "wux-row": "../../dist/row/index",
+    "wux-col": "../../dist/col/index",
+    "wux-toptips": "../../dist/toptips/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

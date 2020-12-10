@@ -1,0 +1,24 @@
+<!--miniprogram/pages/create/index.wxml-->
+<view class="container">
+  <view class="status">
+    <text>创建新小组</text>
+  </view>
+  <view class="content">
+    <view class="weui-cells__title">组名和密码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" name="name" value="{{name}}" bindinput="nameChange" placeholder="请输入组名" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" name="password" value="{{password}}" bindinput="passwordChange" placeholder="请输入密码" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" bindtap="enter" url="/pages/index/index" style="background-color:#454d93;" type="primary">确定</button>
+    </view>
+  </view>
+</view>

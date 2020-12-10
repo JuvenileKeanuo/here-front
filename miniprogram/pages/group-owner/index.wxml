@@ -1,0 +1,34 @@
+<!-- miniprogram/pages/group-owner/index.wxml -->
+<view class="container">
+  <view class="status">
+    <text>{{groupname}}</text>
+  </view>
+  <view class="content">
+    <view class="tablecontainer" style="height:30%;background-color:#e8eff5;">
+      <ff-canvas id="stack-dom" canvas-id="stack" opts="{{ opts }}"></ff-canvas>
+    </view>
+    <scroll-view scroll-y="true" style="height:70%;width:100%;" bindscroll="scroll" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower">
+      <view class="weui-cells__title">历史记录</view>
+      <view class="weui-cells weui-cells_after-title">
+        <navigator url="{{item.url}}" wx:for-items="{{group_data}}" wx:key="_id" data-id="{{item._id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{item._date_string}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">
+            已到 {{item._user_checked.length}}人 未到 {{item._user_unchecked.length}}人
+          </view>
+        </navigator>
+        <wux-skeleton active class="weui-cell" wx:for-items="{{skeletons}}" wx:key="*this" hidden="{{isloaded}}">
+          <wux-skeleton-paragraph rows="2" />
+        </wux-skeleton>
+      </view>
+      <view style="width:10rpx;height:300rpx;"></view>
+    </scroll-view>
+  </view>
+  <block wx:if="{{isempty}}">
+    <view class="content" style="display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+      <view style="margin-top:30rpx;color:#888888;font-size:30rpx;">
+        <text>还没点过名</text>
+      </view>
+    </view>
+  </block>
+  <wux-fab-button position="{{ types[typeIndex] }}" theme="calm" direction="vertical" reverse="{{ reverse }}" spaceBetween="{{ spaceBetween }}" sAngle="{{ sAngle }}" eAngle="{{ eAngle }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" bind:contact="onContact" bind:getuserinfo="onGotUserInfo" />
+</view>
